@@ -1,7 +1,7 @@
 require('dotenv').config(); // load env variables
 const { MongoClient } = require('mongodb');
 
-const uri = "mongodb+srv://sridevelops:Mahadev%4004@cluster0.qrn2vq7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://sridevelops:Mahadev%4004@cluster0.qrn2vq7.mongodb.net/rootsDB?retryWrites=true&w=majority&tls=true&appName=Cluster0";
 const client = new MongoClient(uri);
 
 async function connectToMongo() {
