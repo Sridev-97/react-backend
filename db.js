@@ -1,16 +1,18 @@
 const {MongoClient} = require('mongodb');
 
-const uri = "mongodb+srv://sridevelops:Mahadev%4004@cluster0.qrn2vq7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.MONGODB_URI;;
 const client = new MongoClient(uri);
 
 async function connectToMongo(){
   try{
     await client.connect();
     console.log("✅ Connected to MongoDB Atlas");
+
     const db = client.db("rootsDB");
     return db;
   }catch (err){
-    console.error("Connection Error:", err);
+    console.error("❌ MongoDB Connection Error:", err);
+    return null;
   }
 }
 
